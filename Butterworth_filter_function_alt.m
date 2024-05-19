@@ -12,6 +12,7 @@
 %    iphase=1  for refiltering for phase correction
 %          =2  for no refiltering
 %
+% example code change
 function[y,mu,sd,rms]=...
                    Butterworth_filter_function_alt(y,dt,iband,fl,fh,iphase)
 %
