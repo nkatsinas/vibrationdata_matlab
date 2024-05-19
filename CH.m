@@ -1,0 +1,16 @@
+ch1=[freq channel(:,1)];
+ch2=[freq channel(:,2)];
+ch3=[freq channel(:,3)];
+ch4=[freq channel(:,4)];
+ch5=[freq channel(:,5)];
+ch6=[freq channel(:,6)];
+ch7=[freq channel(:,7)];
+ch8=[freq channel(:,8)];
+ch9=[freq channel(:,9)];
+ch10=[freq channel(:,10)];
+ch11=[freq channel(:,11)];
+ch12=[freq channel(:,12)];
+ch13=[freq channel(:,13)];
+ch14=[freq channel(:,14)];
+ch15=[freq channel(:,15)];
+ch16=[freq channel(:,16)];

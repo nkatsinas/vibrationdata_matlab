@@ -1,0 +1,80 @@
+function[XYZ]=beam_3D_nastran_find(nss,ii,jj) 
+        decimal_flag=0;
+        plus_flag=0;
+        minus_flag=0;
+        XYZ=0;
+        jki=1;
+        bbb=0;
+        for(i=ii:jj)
+%            
+            jflag=0;
+            if(strfind(nss(i),'0'))
+                jflag=1;
+            end
+            if(strfind(nss(i),'1'))
+                jflag=1;           
+            end        
+            if(strfind(nss(i),'2'))
+                jflag=1;     
+            end
+            if(strfind(nss(i),'3'))
+                jflag=1;
+            end  
+            if(strfind(nss(i),'4'))
+                jflag=1; 
+            end
+            if(strfind(nss(i),'5'))
+                jflag=1;            
+            end            
+            if(strfind(nss(i),'6'))
+                jflag=1;                   
+            end
+            if(strfind(nss(i),'7'))
+                jflag=1;                 
+            end  
+            if(strfind(nss(i),'8'))
+                jflag=1;             
+            end
+            if(strfind(nss(i),'9'))
+                jflag=1;           
+            end             
+            if(strfind(nss(i),'+'))
+                jflag=2;        
+                plus_flag=1;
+            end
+            if(strfind(nss(i),'.'))
+                jflag=3; 
+                decimal_flag=1;
+            end                 
+            if(strfind(nss(i),'-'))
+                jflag=4;    
+                minus_flag=1;   
+            end         
+            if(jflag==1 && decimal_flag==0)
+                aaa=str2num(nss(i));
+                XYZ=double(XYZ*10+aaa);
+            end
+            if(jflag==1 && decimal_flag==1)
+                aaa=str2num(nss(i));
+                XYZ=double(XYZ+aaa*10^(-jki));   
+                jki=jki+1;
+            end
+            if(jflag==1 && plus_flag==1)
+                aaa=str2num(nss(i));
+                bbb=bbb*10+aaa;
+            end     
+            if(jflag==1 && minus_flag==1)
+                aaa=str2num(nss(i));
+                bbb=bbb*10+aaa;
+                break;
+            end
+%            out1=sprintf(' nss(%d)=%s  jflag=%d decimal_flag=%d XYZ=%g\n',i,nss(i),jflag,decimal_flag,XYZ);
+%            disp(out1);    
+        end 
+%
+        if(plus_flag==1)
+            XYZ=double(XYZ*10^bbb);
+        end 
+        if(minus_flag==1)
+            XYZ=double(XYZ*10^(-bbb));
+        end      

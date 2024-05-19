@@ -1,0 +1,104 @@
+[CB]=beam_bending_phase_speed(em,I,md,omega,area)
+[cb]=plate_bending_phase_speed(em,md,mu,h,omega)
+
+[CL]=CL_plate(E,rho,mu)
+[fcr]=critical_frequency_thin_plate(c,thick,mu,rho,em)
+[rad_eff_half_sp]=re_thin_plate(freq,fcr,a,b,c,bc)
+[G]=GPa_to_Pa(G)    
+    [em]=GPa_to_Pa(em)
+[elastic_modulus,mass_density,poisson]=four_materials(iu,imat)
+[rad_eff]=re_thin_plate(freq,fcr,a,b,c)
+[psi_rms,Pa_rms]=convert_dB_pressure(dB)
+
+ 
+[xtt,xTT,iflag]=xtick_label(fmin,fmax);
+ 
+if(iflag==1)
+    set(gca,'xtick',xtt);
+    set(gca,'XTickLabel',xTT);
+end
+%
+set(gca,'MinorGridLineStyle',':','GridLineStyle','-','XScale','log',...                     'YScale','log','XminorTick','off','YminorTick','off');
+
+
+
+
+Beranek and Ver, Noise and Vibration Control Engineering Principles and Applications, Wiley, New York, 1992.  Equation (9.84)
+
+E. Szechenyi, Modal Densities and Radiation Efficiencies of Unstiffened Cylinders using Statistical Methods, Journal of Sound and Vibration, 1971.  Appendix I.
+J. Wijker, Random Vibrations in Spacecraft Structure Design, Springer, New York, 2009.  
+Table (4.4) & Appendix J
+
+R. Lyon & R. DeJong, Theory and Application of Statistical Energy Analysis, Second Edition, Lyon Corp, Cambridge, MA, 1998.
+
+M. Norton & D. Karczub, Fundamentals of Noise and Vibration Analysis for Engineers, Second Edition Cambridge University Press, 2003.   Equation (6.35)
+
+
+https://books.google.com/books?id=hVPPces8UtkC&pg=PA161&lpg=PA161&dq=cylinder+acoustic+modal+density&source=bl&ots=UJRlxIgC7x&sig=DQQ0A93G_hVdxWt3cd3dJLgZzQ0&hl=en&sa=X&ved=0ahUKEwj5wMDM9uDJAhUKKyYKHQaSCDA4ChDoAQg2MAY#v=onepage&q=cylinder%20acoustic%20modal%20density&f=false
+
+ns=get(handles.listbox_structure,'Value');
+
+plate_power.jpg
+
+
+
+
+
+set(handles.listbox_pu, 'String', '');
+string_th{1}=sprintf('dB ref 20 micro Pa');
+
+
+    string_th{2}=sprintf('psi rms');  
+ string_th{2}=sprintf('Pa rms');
+set(handles.listbox_pu,'String',string_th)
+
+
+text_pressure
+text_mass
+text_velox
+
+
+
+
+file:///C:/Users/tirvine/Downloads/ADA006413.pdf
+
+
+https://ntrl.ntis.gov/NTRL/dashboard/searchResults/titleDetail/ADA006413.xhtml
+R. Lyon, Statistical Energy Analysis for Designers. Part I. Basic Theory, 1974.
+
+listbox_pu
+
+set(handles.listbox_input_type, 'String', '');
+    string_th{8}=sprintf('Other');    
+    set(handles.listbox_input_type,'String',string_th)
+
+
+dB ref 20 micro Pa
+psi rms
+
+Pa rms
+
+
+free_panel_velox.jpg
+
+Jordi Villar Venini, Vibroacoustic Modelling of Orthotropic Plates, Master Thesis, Universitat Politècnica de Catalunya · BarcelonaTech, 2011
+
+Figure 3.28: Radiation efficiency for SS-SS-SS-SS, CCCC and FFFF plate in third octave band
+
+Universitat Politechnica De Catalunya Barcelona Tech
+
+
+three_subsystems_a_single
+three_subsystems_b_single
+
+three_subsystems_a_multi
+three_subsystems_b_multi
+
+
+ 
+
+
+
+
+
+

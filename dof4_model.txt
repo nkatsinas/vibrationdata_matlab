@@ -1,0 +1,17 @@
+node 	 1 	        0 	        0 	        0 	        1 	        1 	        1 	        1 	        1 	        1 
+node 	 2 	        0 	        1 	        0 	        1 	        0 	        1 	        1 	        1 	        1 
+node 	 3 	       -1 	        2 	        0 	        1 	        0 	        1 	        1 	        1 	        1 
+node 	 4 	        0 	        2 	        0 	        1 	        0 	        1 	        1 	        1 	        1 
+node 	 5 	        1 	        2 	        0 	        1 	        0 	        1 	        1 	        1 	        1 
+point_mass 	 2 	       10 	        0 	        0 	        0 
+point_mass 	 3 	        5 	        0 	        0 	        0 
+point_mass 	 4 	        5 	        0 	        0 	        0 
+point_mass 	 5 	        5 	        0 	        0 	        0 
+dof_spring_property 	 1 	        0 	    1e+05 	        0 	        0 	        0 	        0 
+dof_spring_property 	 2 	        0 	    1e+04 	        0 	        0 	        0 	        0 
+dof_spring_property 	 3 	        0 	    4e+04 	        0 	        0 	        0 	        0 
+dof_spring_property 	 4 	        0 	  1.6e+05 	        0 	        0 	        0 	        0 
+dof_spring_element 	 1 	 1 	 2 
+dof_spring_element 	 2 	 2 	 3 
+dof_spring_element 	 3 	 2 	 4 
+dof_spring_element 	 4 	 2 	 5 

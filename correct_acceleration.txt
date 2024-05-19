@@ -1,0 +1,25 @@
+The goal of this script is to correct an acceleration signal so 
+that its integrated velocity and double integrated displacement 
+each oscillates about its respective zero baseline. 
+
+The user must use trial-and-error to determine the best 
+combination of filtering, trend removal and tapering to 
+to achieve this goal.
+
+Nine subplots appear as follows: 
+
+Row 1, Col 1 - processed acceleration prior to integration 
+Row 2, Col 1 - integrated velocity 
+Row 3, Col 1 - double integrated displacement 
+
+Row 3, Col 2 - double integrated displacement (repeated) 
+Row 2, Col 2 - differentiated velocity from double integrated displacement
+Row 1, Col 2 - double differentiated acceleration from double integrated displacement
+
+Row 1, Col 3 - double differentiated acceleration (repeated) 
+Row 2, Col 3 - integrated velocity from double differentiated acceleration
+Row 3, Col 3 - double integrated displacement from double differentiated acceleration
+
+The goal is that the curves in all nine plots oscillate about the
+respective zero baseline. 
+

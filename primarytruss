@@ -1,0 +1,68 @@
+******** EasyPlot save file ********
+******** graph attributes   ********
+/fpo  pd  8.00 7.00        ;page size
+/sf   "Arial"              ;font
+/sf   b   OFF              ;Bold
+/sf   i   OFF              ;Italic
+/sf   u   OFF              ;Underline
+/fpo  pt  14.00            ;base point size
+/fpo  gt  14.00            ;graph-title size
+/fpo  at  14.00            ;axis-title size
+/fpo  an  14.00            ;annotation size
+/fpo  lt  14.00            ;legend-text size
+/fpo  po  OFF              ;portrait mode
+/fpo  co  ON               ;color
+/fpo  sc  ON               ;scale text by graph size
+/fpo  lw  3.00             ;line weight
+/sa   d   1.00             ;data mark size
+/sa   t   1.00             ;tic size
+/sa   b   0.00             ;bar separation
+
+******** open new graph     ********
+//pos 0 0 1 1
+/ag              
+/st    OFF                 ;3D state
+
+/sa m  2  2                ;mark, dash & color for column 2
+//cwt  1  2                ;line weight
+/sm    OFF                 ;data marks
+/sc    ON                  ;connect points
+/sd    OFF                 ;dashed lines
+/sb    OFF                 ;bar
+/se x  OFF                 ;X-error bars
+/se y  OFF                 ;Y-error bars
+/td    "xy"                ;define the columns
+  5.77905  99.9214
+  12.2137  82.6752
+  20.1817  66.2036
+  26.3111  55.8586
+  32.8475  45.9173
+  39.4871  37.9911
+  46.9435  30.6225
+  52.4588  26.0081
+  56.7502  23.2726
+   62.269  20.4191
+  67.7913  18.5077
+  72.7002  16.9962
+  78.5312  15.6063
+  84.5658  14.1445
+  90.0881  12.8204
+  100.112  10.8822
+//nc                       ;end of curve
+
+
+******** x-axis ********
+/et    x ""                ;axis title
+/oaam  x ON                ;min tics
+/oaamm x ON                ;maj tics
+/ogs   x h                 ;grid style
+
+******** y-axis ********
+/et    y ""                ;axis title
+/oaam  y ON                ;min tics
+/oaamm y ON                ;maj tics
+/ogs   y h                 ;grid style
+
+/et g  ""                  ;graph title
+/og    OFF                 ;grid
+

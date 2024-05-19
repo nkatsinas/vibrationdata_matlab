@@ -1,0 +1,72 @@
+%
+%   ramp_invariant_filter_coefficients.m  ver 1.2  September 28, 2012
+%
+function[a1,a2,df1,df2,df3,vf1,vf2,vf3,af1,af2,af3]=...
+                    ramp_invariant_filter_coefficients(ndof,omegan,damp,dt)
+%
+mass=1;
+%
+a1=zeros(ndof,1);
+a2=zeros(ndof,1);
+%
+df1=zeros(ndof,1);
+df2=zeros(ndof,1);
+df3=zeros(ndof,1);
+%
+vf1=zeros(ndof,1);
+vf2=zeros(ndof,1);
+vf3=zeros(ndof,1);
+%
+af1=zeros(ndof,1);
+af2=zeros(ndof,1);
+af3=zeros(ndof,1);
+%
+for j=1:ndof
+%
+    omegad=omegan(j)*sqrt(1.-(damp(j)^2));
+    domegan=damp(j)*omegan(j);
+%    
+    cosd=cos(omegad*dt);
+    sind=sin(omegad*dt); 
+%
+    domegadt=domegan*dt;
+%
+    eee1=exp(-domegadt);
+    eee2=exp(-2.*domegadt);
+%
+    ecosd=eee1*cosd;
+    esind=eee1*sind; 
+%
+    a1(j)=2.*ecosd;
+    a2(j)=-eee2;
+%
+    omeganT=omegan(j)*dt;
+    phi=2*(damp(j))^2-1;
+    DD1=(omegan(j)/omegad)*phi;
+    DD2=2*DD1;
+%    
+    df1(j)=2*damp(j)*(ecosd-1) +DD1*esind +omeganT;
+    df2(j)=-2*omeganT*ecosd +2*damp(j)*(1-eee2) -DD2*esind;
+    df3(j)=(2*damp(j)+omeganT)*eee2 +(DD1*esind-2*damp(j)*ecosd);
+%     
+    VV1=-(damp(j)*omegan(j)/omegad);
+%    
+    vf1(j)=(-ecosd+VV1*esind)+1;
+    vf2(j)=eee2-2*VV1*esind-1;
+    vf3(j)=ecosd+VV1*esind-eee2;
+%
+    MD=(mass*omegan(j)^3*dt);
+    df1(j)=df1(j)/MD;
+    df2(j)=df2(j)/MD;
+    df3(j)=df3(j)/MD;
+%
+    VD=(mass*omegan(j)^2*dt);
+    vf1(j)=vf1(j)/VD;
+    vf2(j)=vf2(j)/VD;
+    vf3(j)=vf3(j)/VD;
+%
+    af1(j)=esind/(mass*omegad*dt);
+    af2(j)=-2*af1(j);
+    af3(j)=af1(j);
+%   
+end    

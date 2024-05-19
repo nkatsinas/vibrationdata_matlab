@@ -1,0 +1,27 @@
+ [~,jj]=min(abs(M6_AM01_th_ext2(:,1)-45.14));
+
+  M6_AM01_th_ext2_ac=[M6_AM01_th_ext2(:,1)     M6_AM01_th_ext2(:,2)-mean(M6_AM01_th_ext2(1:jj,2)) ];        
+  M6_AM02_X_th_ext2_ac=[M6_AM02_X_th_ext2(:,1)     M6_AM02_X_th_ext2(:,2)-mean(  M6_AM02_X_th_ext2(1:jj,2))  ];      
+  M6_AM02_Y_th_ext2_ac=[M6_AM02_Y_th_ext2(:,1)     M6_AM02_Y_th_ext2(:,2)-mean(  M6_AM02_Y_th_ext2(1:jj,2))   ];      
+  M6_AM02_Z_th_ext2_ac=[ M6_AM02_Z_th_ext2(:,1)     M6_AM02_Z_th_ext2(:,2)-mean(  M6_AM02_Z_th_ext2(1:jj,2))  ];      
+  M6_AM03_th_ext2_ac=[ M6_AM03_th_ext2(:,1)    M6_AM03_th_ext2(:,2)-mean(  M6_AM03_th_ext2(1:jj,2))  ];        
+  M6_AM05_X_th_ext2_ac=[ M6_AM05_X_th_ext2(:,1)     M6_AM05_X_th_ext2(:,2)-mean(  M6_AM05_X_th_ext2(1:jj,2))  ];      
+  M6_AM05_Y_th_ext2_ac=[M6_AM05_Y_th_ext2(:,1)     M6_AM05_Y_th_ext2(:,2)-mean(  M6_AM05_Y_th_ext2(1:jj,2))   ];      
+  M6_AM05_Z_th_ext2_ac=[M6_AM05_Z_th_ext2(:,1)     M6_AM05_Z_th_ext2(:,2)-mean(  M6_AM05_Z_th_ext2(1:jj,2))   ]; 
+  M6_AM06_th_ext2_ac=[ M6_AM06_th_ext2(:,1)     M6_AM06_th_ext2(:,2)-mean(  M6_AM06_th_ext2(1:jj,2))  ];             
+  M6_AM08_th_ext2_ac=[ M6_AM08_th_ext2(:,1)     M6_AM08_th_ext2(:,2)-mean(  M6_AM08_th_ext2(1:jj,2))  ];        
+  M6_AM14_X_th_ext2_ac=[ M6_AM14_X_th_ext2(:,1)     M6_AM14_X_th_ext2(:,2)-mean(  M6_AM14_X_th_ext2(1:jj,2))  ];      
+  M6_AM14_Y_th_ext2_ac=[M6_AM14_Y_th_ext2(:,1)     M6_AM14_Y_th_ext2(:,2)-mean(  M6_AM14_Y_th_ext2(1:jj,2))   ];      
+  M6_AM14_Z_th_ext2_ac=[M6_AM14_Z_th_ext2(:,1)      M6_AM14_Z_th_ext2(:,2)-mean(  M6_AM14_Z_th_ext2(1:jj,2)) ];      
+  M6_AM17_X_th_ext2_ac=[M6_AM17_X_th_ext2(:,1)     M6_AM17_X_th_ext2(:,2)-mean(  M6_AM17_X_th_ext2(1:jj,2))   ];      
+  M6_AM17_Y_th_ext2_ac=[M6_AM17_Y_th_ext2(:,1)     M6_AM17_Y_th_ext2(:,2)-mean(  M6_AM17_Y_th_ext2(1:jj,2))   ];      
+  M6_AM17_Z_th_ext2_ac=[ M6_AM17_Z_th_ext2(:,1)     M6_AM17_Z_th_ext2(:,2)-mean(   M6_AM17_Z_th_ext2(1:jj,2))  ];      
+  M6_AM19_th_ext2_ac=[M6_AM19_th_ext2(:,1)     M6_AM19_th_ext2(:,2)-mean(  M6_AM19_th_ext2(1:jj,2))   ];        
+  M6_AM20_X_th_ext2_ac=[M6_AM20_X_th_ext2(:,1)     M6_AM20_X_th_ext2(:,2)-mean(  M6_AM20_X_th_ext2(1:jj,2))   ];      
+  M6_AM20_Y_th_ext2_ac=[ M6_AM20_Y_th_ext2(:,1)     M6_AM20_Y_th_ext2(:,2)-mean(  M6_AM20_Y_th_ext2(1:jj,2))  ];      
+  M6_AM20_Z_th_ext2_ac=[ M6_AM20_Z_th_ext2(:,1)     M6_AM20_Z_th_ext2(:,2)-mean(  M6_AM20_Z_th_ext2(1:jj,2))  ];      
+  M6_AM27_th_ext2_ac=[ M6_AM27_th_ext2(:,1)     M6_AM27_th_ext2(:,2)-mean(  M6_AM27_th_ext2(1:jj,2))  ];        
+  M6_AM29_th_ext2_ac=[M6_AM29_th_ext2(:,1)     M6_AM29_th_ext2(:,2)-mean(  M6_AM29_th_ext2(1:jj,2))   ];        
+  M6_AM30_X_th_ext2_ac=[M6_AM30_X_th_ext2(:,1)     M6_AM30_X_th_ext2(:,2)-mean(  M6_AM30_X_th_ext2(1:jj,2))   ];      
+  M6_AM30_Y_th_ext2_ac=[ M6_AM30_Y_th_ext2(:,1)     M6_AM30_Y_th_ext2(:,2)-mean(  M6_AM30_Y_th_ext2(1:jj,2))  ];      
+  M6_AM30_Z_th_ext2_ac=[ M6_AM30_Z_th_ext2(:,1)     M6_AM30_Z_th_ext2(:,2)-mean(  M6_AM30_Z_th_ext2(1:jj,2))  ];      

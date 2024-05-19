@@ -1,0 +1,41 @@
+%
+%  SEA_full_octave_frequencies.m  ver 1.1  by Tom Irvine
+%
+function[fl,fc,fu,imax]=SEA_full_octave_frequencies()
+%
+fc(1)=2.;
+fc(2)=4.;
+fc(3)=8.;
+fc(4)=16;
+fc(5)=31.5;
+fc(6)=63;
+fc(7)=125;
+fc(8)=250;
+fc(9)=500;
+fc(10)=1000;
+fc(11)=2000;
+fc(12)=4000;
+fc(13)=8000;
+fc(14)=16000;
+%
+while(1)
+    if(fc(1)>=20)
+        break;
+    else
+       fc(1)=[]; 
+    end
+end
+%
+imax=length(fc);
+%
+alpha=2^(1/2);
+%
+fl=fc/alpha;
+%
+fu=zeros(imax,1);
+%
+for i=1:imax-1
+    fu(i)=fl(i+1);
+end
+%
+fu(imax)=fc(imax)*alpha;

@@ -1,0 +1,7 @@
+P6_AM17_X=[AM17_X.Time AM17_X.Data];
+P6_AM17_Y=[AM17_Y.Time AM17_Y.Data];
+P6_AM17_Z=[AM17_Z.Time AM17_Z.Data];
+
+P6_AM20_X=[AM20_X.Time AM20_X.Data];
+P6_AM20_Y=[AM20_Y.Time AM20_Y.Data];
+P6_AM20_Z=[AM20_Z.Time AM20_Z.Data];

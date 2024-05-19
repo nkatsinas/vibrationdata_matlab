@@ -1,0 +1,85 @@
+******** EasyPlot save file ********
+******** graph attributes   ********
+/fpo  pd  8.00 6.00        ;page size
+/sf   "Arial"              ;font
+/sf   b   OFF              ;Bold
+/sf   i   OFF              ;Italic
+/sf   u   OFF              ;Underline
+/fpo  pt  12.00            ;base point size
+/fpo  gt  base             ;graph-title size
+/fpo  at  base             ;axis-title size
+/fpo  an  base             ;annotation size
+/fpo  lt  base             ;legend-text size
+/fpo  po  OFF              ;portrait mode
+/fpo  co  OFF              ;color
+/fpo  sc  ON               ;scale text by graph size
+/fpo  lw  3.00             ;line weight
+/sa   d   0.40             ;data mark size
+/sa   t   1.00             ;tic size
+/sa   b   0.00             ;bar separation
+
+******** open new graph     ********
+//pos 0 0 1 1
+/ag              
+/st    OFF                 ;3D state
+
+/sa m  1  2                ;mark, dash & color for column 2
+//cwt  1  2                ;line weight
+/sm    OFF                 ;data marks
+/sc    ON                  ;connect points
+/sd    OFF                 ;dashed lines
+/sb    OFF                 ;bar
+/se x  OFF                 ;X-error bars
+/se y  OFF                 ;Y-error bars
+/td    "xy"                ;define the columns
+   100   135
+   111   144
+   122   160
+   135   179
+   144   203
+   159   248
+   174   300
+   191   376
+   211   463
+   236   576
+   271   774
+   306   984
+   343  1238
+   397  1540
+   445  1875
+   525  2333
+   598  2603
+   645  2705
+   691  2719
+   728  2680
+   771  2560
+   846  2283
+   924  1981
+  1052  1574
+  1137  1325
+  1242  1122
+  1349   922
+  1488   749
+  1609   636
+  1712   546
+  1812   479
+  1969   397
+  2000   380
+//nc                       ;end of curve
+
+
+******** x-axis ********
+/et    x ""                ;axis title
+/oaam  x ON                ;min tics
+/oaamm x ON                ;maj tics
+/ogs   x h                 ;grid style
+
+******** y-axis ********
+/et    y ""                ;axis title
+/oaam  y ON                ;min tics
+/oaamm y ON                ;maj tics
+/ogs   y h                 ;grid style
+
+/et g  ""                  ;graph title
+/og    OFF                 ;grid
+

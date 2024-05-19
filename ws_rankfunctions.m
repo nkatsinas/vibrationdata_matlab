@@ -1,0 +1,158 @@
+function[iwin,nrank,dm,drank]=ws_rankfunctions(rntrials,ym,vm,dm,em,im,nspec,aunit,vunit,dunit,displacement_limit,iw,ew,dw,vw,aw)
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+	for(i=1:rntrials)
+%
+		yrank(i)=i;
+		vrank(i)=i;
+		drank(i)=i;
+		erank(i)=i;
+		irank(i)=i;
+%
+		pyrank(i)=0;
+		pvrank(i)=0;
+		pdrank(i)=0;
+		perank(i)=0;
+		pirank(i)=0;
+%
+    end
+%
+	for(i=1:rntrials-1)
+%
+		for(j=i+1:rntrials)
+%
+			if(ym(i)<ym(j))
+				temp=ym(i);
+                ym(i)=ym(j);  
+				ym(j)=temp;
+%
+				itemp=yrank(i);
+                yrank(i)=yrank(j);  
+				yrank(j)=itemp;
+            end    
+			if(vm(i)<vm(j))
+				temp=vm(i);
+                vm(i)=vm(j);  
+				vm(j)=temp;
+%
+				itemp=vrank(i);
+                vrank(i)=vrank(j);  
+				vrank(j)=itemp;
+            end    
+			if(dm(i)<dm(j))
+				temp=dm(i);
+                dm(i)=dm(j);  
+				dm(j)=temp;
+%
+			    itemp=drank(i);
+                drank(i)=drank(j);  
+				drank(j)=itemp;
+            end    
+			if(em(i)<em(j))
+				temp=em(i);
+                em(i)=em(j);  
+				em(j)=temp;
+%
+			    itemp=erank(i);
+                erank(i)=erank(j);  
+				erank(j)=itemp;
+            end
+			if(im(i)<im(j))
+				temp=im(i);
+                im(i)=im(j);  
+				im(j)=temp;
+%
+			    itemp=irank(i);
+                irank(i)=irank(j);  
+				irank(j)=itemp;
+            end
+        end
+    end
+%
+    nmin=10000;
+%
+	for(i=1:rntrials)
+		for(j=1:rntrials)
+            if(yrank(i)==j)
+				pyrank(j)=i;
+                break;
+            end   
+        end
+    end
+%
+	for(i=1:rntrials)
+		for(j=1:rntrials)
+            if(vrank(i)==j)
+				pvrank(j)=i;
+                break;
+            end   
+        end
+    end
+%
+	for(i=1:rntrials)
+		for(j=1:rntrials)
+            if(drank(i)==j)
+				pdrank(j)=i;
+                break;
+            end
+        end
+    end
+%
+	for(i=1:rntrials)
+		for(j=1:rntrials)
+            if(erank(i)==j)
+				perank(j)=i;
+                break;
+            end   
+        end
+    end
+%
+	for(i=1:rntrials)
+		for(j=1:rntrials)
+            if(irank(i)==j)
+				pirank(j)=i;
+                break;
+            end   
+        end
+    end
+%
+    nmax=0.;
+    iwin=0;
+%
+	nrank=((iw*pirank+ew*perank)+(dw*pdrank+vw*pvrank+aw*pyrank));
+%
+	for(i=1:rntrials) 
+%
+		if( nrank(i)>nmax)
+%%            out1=sprintf('p1 %d  %8.4g  %8.4g ',i,dm(i),displacement_limit);
+%%            disp(out1);
+			nmax=nrank(i);
+			iwin=i;
+        end
+    end
+%
+    nmax=0.;
+	for(i=1:rntrials) 
+%
+		if( nrank(i)>nmax && dm(pdrank(i))<=displacement_limit)
+%%         out1=sprintf('p2 %d  %8.4g  %8.4g ',i,dm(i),displacement_limit);
+%%        disp(out1);
+			nmax=nrank(i);
+			iwin=i;
+        end
+    end
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%            
+%
+            out1=sprintf('\n\n Optimum case = %ld \n',iwin);
+            out2=sprintf('   Peak Accel = %12.3f %s    ',ym(pyrank(iwin)),aunit);
+            out3=sprintf('   Peak Velox = %12.3f %s    ',vm(pvrank(iwin)),vunit);
+            out4=sprintf('   Peak Disp  = %12.3f %s    ',dm(pdrank(iwin)),dunit);
+            out5=sprintf('   Max Error  = %12.3f dB \n\n',20.*im(pirank(iwin)));
+%
+            disp(out1); 
+            disp(out2);     
+            disp(out3);     
+            disp(out4);     
+            disp(out5);                 
